@@ -1,4 +1,4 @@
-# 🚀 PumpSwap Volume Generator Bot – Create PumpSwap Volume Like a Pro
+# PumpSwap Volume Bot
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Solana](https://img.shields.io/badge/Solana-362783?style=flat&logo=solana&logoColor=white)
