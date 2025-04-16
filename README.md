@@ -38,7 +38,6 @@ or just DM me directly: https://t.me/benorizz0
 - [Troubleshooting PumpSwap Volume Errors](#troubleshooting-pumpswap-volume-errors)
 - [Optimizing PumpSwap Volume Performance](#optimizing-pumpswap-volume-performance)
 - [Contributing](#contributing)
-- [License](#license)
 - [Disclaimer](#disclaimer)
 
 ---
@@ -84,8 +83,7 @@ Before generating PumpSwap volume, ensure you have:
 
 - Node.js v16+
 - Solana CLI installed
-- At least 1 SOL (for volume funding)
-- Jito bundle access
+- Free Solana RPC ( https://helius.dev )
 - `.env` configuration (see below)
 
 ---
@@ -94,7 +92,7 @@ Before generating PumpSwap volume, ensure you have:
 
 ```bash
 # Clone the PumpSwap volume bot repo
-git clone https://github.com/yourusername/pumpswap-volume-bot.git
+git clone https://github.com/cicere/pumpswap-volume-bot.git
 cd pumpswap-volume-bot
 
 # Install dependencies
@@ -118,7 +116,7 @@ npm start
 Or to run the custom extender logic directly:
 
 ```bash
-node src/extender.js
+node main.js
 ```
 
 Follow the prompts for:
@@ -201,7 +199,7 @@ Automatic detection and safe handling of Token-2022 tokens to prevent closing in
 
 Want to improve the **PumpSwap volume bot**?
 
-1. Fork the repo
+1. Join Discord & get approved for development
 2. Create a feature branch
 3. Commit your changes
 4. Push to GitHub
@@ -209,11 +207,6 @@ Want to improve the **PumpSwap volume bot**?
 
 ---
 
-## 📄 License
-
-MIT License – see [LICENSE](LICENSE) for full terms.
-
----
 
 ## ⚠️ Disclaimer
 
