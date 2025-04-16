@@ -1,206 +1,226 @@
-# 🚀 PumpSwap Volume Generator Bot
+# 🚀 PumpSwap Volume Generator Bot – Create PumpSwap Volume Like a Pro
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Solana](https://img.shields.io/badge/Solana-362783?style=flat&logo=solana&logoColor=white)
 ![Version](https://img.shields.io/badge/version-1.2.0-blue)
 
-A high-performance, multi-pool trading bot designed to generate volume on PumpSwap and Raydium protocols. This tool supports both traditional OpenBook markets and the newer CPMM pools, with special optimization for PumpSwap pools.
+**PumpSwap Volume Bot** is a high-performance tool designed to **generate trading volume on PumpSwap**, with full support for Raydium's CPMM and OpenBook as well. Whether you're launching a new token or increasing your market visibility, this bot makes it easy to create realistic and sustainable **PumpSwap volume** through automated buy and sell transactions.
 
-## 📑 Table of Contents
+Join our community at: https://discord.gg/solana-scripts
+
+or just DM me directly: https://t.me/benorizz0
+
+---
+
+## 📌 PumpSwap Volume Bot Highlights
+
+- 🔁 **PumpSwap Volume Automation** – Run fully automated volume generation on PumpSwap pools
+- 🎯 **Supports Raydium & OpenBook** – Compatible with Raydium CPMM and OpenBook alongside PumpSwap
+- ⚙️ **Custom PumpSwap Volume Settings** – Set your own number of wallets, bundle count, and transaction sizes
+- 🧠 **Jito Bundling Support** – Bundles transactions for fast, efficient PumpSwap volume execution
+- 💡 **Intelligent Pool Detection** – Automatically identifies PumpSwap, CPMM, or OpenBook pools
+- 🌐 **Token-2022 Ready** – Seamless volume generation on newer Token-2022 SPL tokens
+- 💲 **USD Volume Estimation** – Live estimation of PumpSwap volume in USD
+- 🔁 **Natural Trading Pattern Simulation** – Randomized transaction sizes for realistic PumpSwap activity
+
+---
+
+## 📘 Table of Contents
 
 - [Overview](#overview)
 - [Features](#features)
-- [How It Works](#how-it-works)
+- [How PumpSwap Volume Generation Works](#how-pumpswap-volume-generation-works)
 - [Prerequisites](#prerequisites)
 - [Installation](#installation)
-- [Usage](#usage)
-- [Configuration](#configuration)
+- [Usage Guide](#usage-guide)
+- [PumpSwap Volume Configuration](#pumpswap-volume-configuration)
 - [Advanced Features](#advanced-features)
-- [Common Issues & Troubleshooting](#common-issues--troubleshooting)
-- [Performance Optimization](#performance-optimization)
+- [Troubleshooting PumpSwap Volume Errors](#troubleshooting-pumpswap-volume-errors)
+- [Optimizing PumpSwap Volume Performance](#optimizing-pumpswap-volume-performance)
 - [Contributing](#contributing)
 - [License](#license)
 - [Disclaimer](#disclaimer)
 
+---
+
 ## 🔍 Overview
 
-This bot creates legitimate trading volume on PumpSwap and Raydium pools through a series of automated buy and sell transactions. It uses ephemeral wallets and Jito bundles to execute transactions efficiently, supporting multiple DEX protocols including:
+The **PumpSwap Volume Generator Bot** helps you simulate real trading activity by executing back-and-forth trades between ephemeral wallets. These trades create **visible volume on PumpSwap**, improving your token’s visibility and perceived liquidity.
 
-- PumpSwap (Primary focus)
-- Raydium CPMM pools
-- Raydium OpenBook markets
+The bot supports:
 
-Whether you're a token developer looking to increase visibility or a market maker supporting new projects, this tool provides a customizable and efficient solution for generating sustainable trading volume.
+- PumpSwap (main focus)
+- Raydium CPMM Pools
+- Raydium OpenBook Markets
+
+---
 
 ## ✨ Features
 
-- **Multi-Protocol Support**: Works with PumpSwap, Raydium CPMM, and OpenBook markets
-- **Transaction Bundling**: Uses Jito for efficient transaction bundling
-- **Volume Customization**: Set minimum and maximum transaction amounts
-- **Concurrency Control**: Run multiple wallet transactions per bundle
-- **Token-2022 Compatible**: Full support for Token-2022 standard tokens
-- **Auto Token Detection**: Automatically identifies token program (SPL/Token-2022)
-- **USD Volume Estimation**: Real-time calculation of expected USD volume
-- **Error Handling**: Comprehensive error logging and retry mechanisms
-- **Randomized Amounts**: Natural-looking volume with randomized transaction sizes
+- **PumpSwap Volume Engine** – Highly optimized for generating PumpSwap volume fast
+- **Multi-Wallet Concurrency** – Use multiple wallets per volume cycle
+- **Flexible Parameters** – Control min/max SOL amounts for PumpSwap volume
+- **Token Auto-Detection** – Identifies whether you're using SPL or Token-2022
+- **Realistic Patterns** – Randomized amounts for natural PumpSwap traffic
+- **Built-in Logging** – Detailed logs of each PumpSwap volume transaction
 
-## 🔄 How It Works
+---
 
-The bot creates a series of ephemeral Solana wallets, funds them, and then executes paired buy and sell transactions on your chosen pool:
+## 🔄 How PumpSwap Volume Generation Works
 
-1. **Setup Phase**: Generates ephemeral wallets and prepares Jito tips
-2. **Pool Detection**: Automatically identifies whether the pool is PumpSwap, CPMM, or OpenBook
-3. **Transaction Bundling**: Groups transactions for efficient processing
-4. **Volume Generation**: Executes buy and sell transactions with randomized amounts
-5. **Cleanup**: Returns remaining funds to the main wallet
+The volume bot works in cycles:
 
-Each cycle can include multiple wallets executing transactions simultaneously, creating natural-looking trading patterns that benefit token visibility.
+1. **Create Wallets** – Temporary wallets are generated and funded
+2. **Pool Type Detection** – Detects if the pool is PumpSwap, Raydium CPMM, or OpenBook
+3. **Bundle Trades with Jito** – Groups buy/sell orders for efficiency
+4. **PumpSwap Volume Generation** – Executes randomized swaps to build volume
+5. **Clean-Up** – Transfers remaining SOL back to the main wallet
+
+---
 
 ## 🛠️ Prerequisites
 
-- Node.js v16+ 
-- Solana CLI (for wallet management)
-- At least 1 SOL for initial funding (more recommended for higher volume)
-- Jito bundles access
-- A configured `.env` file (see Configuration section)
+Before generating PumpSwap volume, ensure you have:
+
+- Node.js v16+
+- Solana CLI installed
+- At least 1 SOL (for volume funding)
+- Jito bundle access
+- `.env` configuration (see below)
+
+---
 
 ## 📦 Installation
 
 ```bash
-# Clone the repository
+# Clone the PumpSwap volume bot repo
 git clone https://github.com/yourusername/pumpswap-volume-bot.git
 cd pumpswap-volume-bot
 
 # Install dependencies
 npm install
 
-# Set up your environment variables
+# Configure the environment
 cp .env.example .env
-# Edit .env with your wallet path and other configuration
+nano .env  # Add your wallet and RPC URL here
 ```
 
-## 🚀 Usage for PumpSwap Volume Generation
+---
 
-To run the PumpSwap Volume Generator Bot and start creating trading volume on PumpSwap:
+## 🚀 Usage Guide
 
-# Start the PumpSwap volume bot with the main interface
+To run the **PumpSwap Volume Bot**:
+
+```bash
 npm start
+```
 
-# Or run the PumpSwap volume extender function directly
+Or to run the custom extender logic directly:
+
+```bash
 node src/extender.js
+```
 
-When prompted in the PumpSwap volume generation interface:
-1. Select "y" to target PumpSwap for volume generation
-2. Enter your token mint address to generate volume on the specific PumpSwap pool
-3. Set the number of wallets per bundle (1-4 recommended) for parallel PumpSwap volume
-4. Define how many PumpSwap volume bundles to perform (higher = more total volume)
-5. Set min/max transaction amounts in SOL to control PumpSwap volume size
-6. Configure delay between PumpSwap volume cycles
-7. Set Jito tip amount for reliable PumpSwap volume transaction processing
+Follow the prompts for:
 
-Example PumpSwap volume generation session:
+- Token mint (for PumpSwap volume)
+- Number of wallets per bundle
+- Number of bundles
+- Min/max volume per transaction
+- Delay between bundles
+- Jito tip value for faster bundling
 
+💡 **Example for generating PumpSwap volume:**
+
+```
 Is it PumpSwap?: y
-Enter your TOKEN mint for PumpSwap volume: 7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU
-Number of wallets per PumpSwap volume bundle (max. 4): 2
-Number of PumpSwap volume bundles to perform (Ex. 50): 25
-Minimum random amount for PumpSwap volume (in SOL): 0.05
-Maximum random amount for PumpSwap volume (in SOL): 0.15
-Delay between PumpSwap volume cycles in seconds (Ex. 3): 3
-Jito tip for PumpSwap volume transactions in Sol (Ex. 0.001): 0.001
+Enter your TOKEN mint for PumpSwap volume: YOUR_TOKEN_MINT_HERE
+Number of wallets per PumpSwap volume bundle: 2
+Number of PumpSwap volume bundles to perform: 50
+Min amount in SOL: 0.05
+Max amount in SOL: 0.12
+Delay between cycles: 3
+Jito tip in SOL: 0.001
+```
 
-## ⚙️ Configuration for PumpSwap Volume Bot
+---
 
-Create a `.env` file with the following variables to optimize your PumpSwap volume generation:
+## ⚙️ PumpSwap Volume Configuration
 
-# Required for PumpSwap volume generation
-WALLET_PATH=/path/to/your/wallet.json
-RPC_URL=https://your-rpc-provider.com
+Create your `.env` with:
 
-# Optional PumpSwap volume settings
+```env
+WALLET_PATH=/absolute/path/to/wallet.json
+RPC_URL=https://your-rpc.com
 DEBUG=false
 JITO_AUTH_KEY=your_jito_auth_key
+```
 
-## 🔧 Advanced PumpSwap Volume Features
+---
 
-### Multiple DEX Support for Volume Generation
+## 🔧 Advanced Features
 
-The PumpSwap volume bot intelligently detects which DEX type you're using:
+### ✅ Pool Detection for Volume Targeting
 
-- For PumpSwap volume: Provide the token mint address
-- For Raydium CPMM volume: Provide the pool ID 
-- For OpenBook volume: Provide the market ID
+- **PumpSwap**: Use token mint
+- **Raydium CPMM**: Use pool ID
+- **OpenBook**: Use market ID
 
-### Token-2022 Handling in PumpSwap Volume Generation
+### ✅ Token-2022 Support
 
-The PumpSwap volume system includes special handling for Token-2022 tokens:
+Automatic detection and safe handling of Token-2022 tokens to prevent closing instruction errors during volume creation.
 
-// The PumpSwap volume bot automatically detects Token-2022 tokens and adjusts closing behavior
-if (tokenProgramId.equals(spl.TOKEN_2022_PROGRAM_ID)) {
-   // Special handling for Token-2022 in PumpSwap volume
-   console.log("Token-2022 detected - skipping account closing");
-} else {
-   // Regular token closing in PumpSwap volume
-   closeTokenAccountIx = spl.createCloseAccountInstruction(...);
-}
+### ✅ Custom PumpSwap Volume Patterns
 
-### Custom PumpSwap Volume Patterns
+- **Low/High Frequency**: Set bundle count and transaction size accordingly
+- **Mixed Patterns**: Use wide ranges to simulate varied trader behavior
 
-To create more natural PumpSwap trading volume patterns, adjust these parameters:
+---
 
-- Small, frequent PumpSwap volume trades: Low amounts, high bundle count
-- Large, infrequent PumpSwap volume trades: Higher amounts, lower bundle count
-- Mixed PumpSwap volume pattern: Wide min/max range, moderate bundle count
+## 🛠 Troubleshooting PumpSwap Volume Errors
 
-## 🛑 Common PumpSwap Volume Issues & Troubleshooting
+### Common Issues:
 
-### PumpSwap Volume Transaction Errors
+- **Rate Limits**: Upgrade RPC provider if throttled
+- **Dropped Bundles**: Increase Jito tip
+- **Insufficient Funds**: Fund wallet with more SOL
+- **Invalid Token Info**: Double check token mint or pool ID
 
-If you see PumpSwap volume transaction errors:
+---
 
-1. Check your RPC provider's rate limits for PumpSwap volume generation
-2. Ensure you have sufficient SOL for all PumpSwap volume transactions
-3. Verify the PumpSwap pool or market ID exists
-4. For Token-2022 tokens on PumpSwap, ensure you've updated to the latest SPL library
+## ⚡ Optimizing PumpSwap Volume Performance
 
-### PumpSwap Volume Bundle Dropped Errors
+- Use 2-3 wallets per bundle for stability
+- Delay volume cycles by 3–5 seconds
+- Use a private RPC provider
+- Increase Jito tips during congestion
 
-When seeing "Bundle Dropped, no connected leader up soon" during PumpSwap volume generation:
+---
 
-1. Increase your Jito tip amount for PumpSwap volume transactions
-2. Reduce the number of wallets per PumpSwap volume bundle
-3. Check Jito network status before generating PumpSwap volume
+## 🤝 Contributing
 
-## ⚡ PumpSwap Volume Performance Optimization
+Want to improve the **PumpSwap volume bot**?
 
-For maximum PumpSwap volume performance:
+1. Fork the repo
+2. Create a feature branch
+3. Commit your changes
+4. Push to GitHub
+5. Open a Pull Request
 
-1. Use a premium RPC provider for PumpSwap volume generation
-2. Limit PumpSwap volume bundles to 2-3 wallets for best reliability
-3. Set reasonable delays between PumpSwap volume cycles (3-5 seconds)
-4. Increase Jito tips during high network congestion for reliable PumpSwap volume
+---
 
-## 🤝 Contributing to the PumpSwap Volume Bot
+## 📄 License
 
-Contributions to improve PumpSwap volume generation are welcome! Please feel free to submit a Pull Request.
+MIT License – see [LICENSE](LICENSE) for full terms.
 
-1. Fork the PumpSwap volume repository
-2. Create your feature branch for PumpSwap volume improvements (git checkout -b feature/amazing-pumpswap-feature)
-3. Commit your PumpSwap volume changes (git commit -m 'Add some amazing PumpSwap volume feature')
-4. Push to the branch (git push origin feature/amazing-pumpswap-feature)
-5. Open a Pull Request for your PumpSwap volume enhancements
+---
 
-## 📄 License for PumpSwap Volume Bot
+## ⚠️ Disclaimer
 
-This PumpSwap volume project is licensed under the MIT License - see the LICENSE file for details.
+This bot is intended for legal and ethical usage such as liquidity testing, development, or legitimate volume generation. Use responsibly:
 
-## ⚠️ PumpSwap Volume Bot Disclaimer
+- Do not use to manipulate markets or deceive investors
+- Follow local laws and exchange policies
+- Understand risks of using PumpSwap and similar DEX protocols
 
-This PumpSwap volume tool is designed for legitimate market making and liquidity provision. Users generating PumpSwap volume should:
-
-1. Ensure compliance with all applicable laws and regulations when generating PumpSwap volume
-2. Understand PumpSwap protocol rules and guidelines for volume generation
-3. Use responsibly to support project growth rather than manipulation of PumpSwap markets
-4. Be aware that improper use of PumpSwap volume generation could violate exchange terms of service
-
-THE PUMPSWAP VOLUME SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED.
+**PumpSwap Volume Bot is provided “as-is” without warranties.**
