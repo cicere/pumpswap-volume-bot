@@ -10,6 +10,10 @@ Join our community at: https://discord.gg/solana-scripts
 
 or just DM me directly: https://t.me/benorizz0
 
+
+TEST IT for FREE at [solana-volume.com](https://solana-volume.com)
+Currently it only supports PumpSwap & Raydium.
+
 ---
 
 ## 📌 PumpSwap Volume Bot Highlights
